@@ -25,26 +25,28 @@
 This 2 Minute Arcade will walk you through some of the most often used blocks when adding sound to your game.
 
 ## Predict 
-- Take a look at the code and make a prediction. What will happen?
+Take a look at the code and make a prediction. What will happen?
 
 ## Run 
 See if you were correct? 
 
-- Switch to the simulator and press press the **A** and **B** buttons. Press the left button as well. 
+Switch to the simulator and press press the **A** and **B** buttons. Press the **left** button as well. 
 
 Was you're prediction correct?
 
 ## Investigate 
-Now... let's see what happens if you switch out the ``||Music:playUntilDone||`` with ``||Music:play``.
+Now... let's see what happens if you switch out, in the ``||Loops:Forever||`` loop the ``||Music:play sound until done||`` with ``||Music:play sound||``.
+
+You can keep the ``||Music:playUntilDone||`` block in the editor unconnected to a loop or event; no need to delete it.
 
 Check out the hint to see how.
 
-Switch to the simulator and press the left button.
+Switch to the simulator and press and hold the left button.
 
 ```blocks
     forever(function () {
     if (controller.left.isPressed()) {
-        \\@highlight
+        //@highlight
         music.jumpUp.play()
         }
     })
@@ -54,13 +56,16 @@ Using the play block will allow another event to interrupt the sound and restart
 
 When creating your game, make sure you select the correct block.
 
+Now switch back the ``||Music:play sound until done||`` and place it back within the ``||Loops:Forver||`` loop.
+
 ## Modify 
 Time to change things around. Play around with the parameters and see what happens.
--[] Change the volume. How high or low can you go?
--[] Change the tempo. How high or low can you go?
--[] Change the notes or add some more in the **button B pressed event**.
--[] Try a different melody or make your own in the **button A pressed event**.
--[] See if you can use the up and down buttons to increase and decrease the tempo.
+
+-[] Change the volume. How high or low can you go?  
+-[] Change the tempo. How high or low can you go?  
+-[] Change the notes or add some more in the **button B pressed event**.  
+-[] Try a different melody or make your own in the **button A pressed event**.  
+-[] See if you can use the up and down buttons to set a fast and slow tempo.  
 
 ## Make
 Now it's your turn!
@@ -72,6 +77,6 @@ Yeah! That sounded great!
 
 Let's recap, in this 2 Minute Arcade, we explored how to add sound effects, melodies, and even make our own tunes. We can modify how quickly (tempo) or loudly (volume) our sounds play.
 
-We also learned about the difference between playing a tone or playing it till it's done.
+We also learned about the difference between the ``||Music:play sound until done||`` and ``||Music:play sound||`` blocks.
 
 Nice!
