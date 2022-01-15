@@ -1,19 +1,3 @@
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.startEffect(effects.fire, 2000)
-    music.playTone(392, music.beat(BeatFraction.Whole))
-    music.playTone(370, music.beat(BeatFraction.Whole))
-    music.playTone(330, music.beat(BeatFraction.Whole))
-    music.playTone(294, music.beat(BeatFraction.Whole))
-    music.playTone(330, music.beat(BeatFraction.Half))
-    music.playTone(330, music.beat(BeatFraction.Half))
-})
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite.startEffect(effects.bubbles, 1000)
-    music.powerUp.play()
-    pause(2000)
-    music.playMelody("G F G A - F E D ", 120)
-})
-let mySprite: Sprite = null
 scene.setBackgroundImage(img`
     eeeee2222222222222222222222222222222222ee2222ee2222ee2222222eeeee2222222222222222222222222222222222ee22222eeee222ee2eeeee2222222222222222222222222222222222ee222
     222eeeee22222222222222222222222222222eee2222eeee2222ee222222222eeeee22222222222222222222222222222eee2222eeeee222ee22222eeeee22222222222222222222222222222eee2222
@@ -136,7 +120,7 @@ scene.setBackgroundImage(img`
     222222e2ebbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbe2e222222
     222222eeebbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbeee222222
     `)
-mySprite = sprites.create(img`
+let mySprite = sprites.create(img`
     bbbb........bbbb.................
     c99bb......bb99b.................
     c999bb....bb999c.................
@@ -179,5 +163,5 @@ mySprite = sprites.create(img`
     .........fffc..............cccc..
     `, SpriteKind.Player)
 mySprite.setPosition(77, 77)
-music.setTempo(65)
-music.setVolume(60)
+mySprite.setStayInScreen(true)
+controller.moveSprite(mySprite)
